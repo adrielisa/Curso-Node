@@ -1,17 +1,22 @@
+//const {getIDPlugin} = require('../plugins/get-id.plugin')
+//const { getAge } = require('../plugins/get-age.plugin')
+
+const { getAge, getUUID} = require('../plugins')
+
 const buildPerson = ({ name, birthdate }) => {
 
     return {
-        id: new Date().getTime(),
+        id: getUUID(),
         name: name,
         birthdate,
-        age: new Date().getFullYear() - new Date(birthdate).getFullYear(),
+        age: getAge(birthdate)
     }
 }
 
 const obj = { name: 'Adriel Isai Rodriguez Pacheco', birthdate: '2005-04-15', hooby: 'Coding' }
 const Adri = buildPerson(obj);
 
-console.log(Adri)
+console.log(Adri);
 
 /*
     * *NOTES
@@ -21,5 +26,4 @@ console.log(Adri)
     We can use both of these, it depends of what we like
     name: name,
     birthday
-
 */
