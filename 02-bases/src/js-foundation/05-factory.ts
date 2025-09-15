@@ -2,9 +2,25 @@
 //const { getAge } = require('../plugins/get-age.plugin')
 //const { getAge, getUUID} = require('../plugins')
 
-const buildMakePerson = ({getUUID, getAge}) => {
-    return ({ name, birthdate }) => {
+interface Person {
+    id: string;
+    name: string;
+    birthdate: string;
+    age: number;
+}
 
+interface PersonInput {
+    name: string;
+    birthdate: string;
+}
+
+interface Dependencies {
+    getUUID: () => string;
+    getAge: (birthdate: string) => number;
+}
+
+const buildMakePerson = ({getUUID, getAge }: Dependencies) => {
+    return ({ name, birthdate }: PersonInput): Person => {
         return {
             id: getUUID(),
             name: name,

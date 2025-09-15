@@ -15,7 +15,7 @@ module.exports = getPokemonById;
 
 // *Promesa usando async/await
 
-const getPokemonById = async (id) =>{
+const getPokemonById = async (id: number) =>{
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
     const pokemon = await http.get(url);

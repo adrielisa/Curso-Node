@@ -37,7 +37,7 @@ function getBluePeriodByName( name ){
 }
 */
 
-function getUserByID (id, callback){
+export function getUserByIDCallback (id: number, callback: any){
     const user = users.find (function(user){
         return user.id === id;
     });
@@ -63,7 +63,3 @@ function getBluePeriodByAge(age){
 getBluePeriodByAge(21);
 
 */
-
-module.exports = {
-    getUserByID,
-}
