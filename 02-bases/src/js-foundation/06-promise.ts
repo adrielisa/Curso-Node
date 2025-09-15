@@ -15,11 +15,11 @@ module.exports = getPokemonById;
 
 // *Promesa usando async/await
 
-const getPokemonById = async (id: number) =>{
+const getPokemonNameById = async (id: string|number): Promise<string> =>{
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
     const pokemon = await http.get(url);
     return pokemon.name;
 }
 
-module.exports = getPokemonById;
+module.exports = getPokemonNameById;

@@ -1,14 +1,3 @@
-const users = [
-    {
-        id: 1,
-        name: 'John Doe',
-    },
-    {
-        id: 2,
-        name: 'Jane Doe',
-    }
-];
-
 /*
 const bluePeriodCharacters = [
     {
@@ -37,7 +26,22 @@ function getBluePeriodByName( name ){
 }
 */
 
-export function getUserByIDCallback (id: number, callback: any){
+interface User {
+    id: number;
+    name: string;
+}
+export const users: User[] = [
+    {
+        id: 1,
+        name: 'John Doe',
+    },
+    {
+        id: 2,
+        name: 'Jane Doe',
+    }
+];
+
+export function getUserByIDCallback (id: number, callback: (err?: string, user?:User) => void){
     const user = users.find (function(user){
         return user.id === id;
     });
@@ -46,10 +50,8 @@ export function getUserByIDCallback (id: number, callback: any){
         return callback(`User not found with id ${id}`);
     }
 
-    return callback(null, user);
+    return callback(undefined, user);
 }
-
-
 
 /*
 function getBluePeriodByAge(age){
