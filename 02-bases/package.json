@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:watch:all": "jest --watchAll", 
+    "test:watch:all": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"

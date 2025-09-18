@@ -8,13 +8,11 @@ const axios = require('axios');
 };
 */
 
-const httpClientPlugin = {
-    get: async(url) => {
+export const httpClientPlugin = {
+    get: async(url:string) => {
         const response = await axios.get(url);
         return response.data
     }
 };
 
-module.exports = {
-    http: httpClientPlugin,
-}
+

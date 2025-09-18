@@ -19,7 +19,7 @@ interface Dependencies {
     getAge: (birthdate: string) => number;
 }
 
-const buildMakePerson = ({getUUID, getAge }: Dependencies) => {
+export const buildMakePerson = ({getUUID, getAge }: Dependencies) => {
     return ({ name, birthdate }: PersonInput): Person => {
         return {
             id: getUUID(),
@@ -30,9 +30,7 @@ const buildMakePerson = ({getUUID, getAge }: Dependencies) => {
     }
 }
 
-module.exports = {
-    buildMakePerson,
-}
+
 
 /*
 const obj = { name: 'Adriel Isai Rodriguez Pacheco', birthdate: '2005-04-15', hooby: 'Coding' }
